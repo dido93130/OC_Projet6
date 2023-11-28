@@ -7,80 +7,95 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
-<body>
-<header>
+<body>	
+	<div id="black-banner">
+		<div class="banner-content">			
+			<i class="fa-regular fa-pen-to-square banner-icon"></i>
+			<span>Mode édition</span>		
+		</div>
+	</div>		
+<header id="header" class="space">	
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
 		<ul>
 			<li>projets</li>
 			<li>contact</li>
-			<li>login</li>
+			<li><a id="login-button" href="login.html">login</a></li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
 </header>
 <main>
-	<section id="introduction">
+	<div id="introduction">		
 		<figure>
 			<img src="./assets/images/sophie-bluel.png" alt="">
-		</figure>
+		</figure>		
 		<article>
-			<h2>Designer d'espace</h2>
+			<h2>Designer d'espace</h2>			
 			<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
 			<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
 			<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
 		</article>
-	</section>
+	</div>
 	<section id="portfolio">
-		<h2>Mes Projets</h2>
-		<div class="gallery">
-			<figure>
-				<img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
-				<figcaption>Abajour Tahina</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-v.png" alt="Appartement Paris V">
-				<figcaption>Appartement Paris V</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/restaurant-sushisen-londres.png" alt="Restaurant Sushisen - Londres">
-				<figcaption>Restaurant Sushisen - Londres</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/la-balisiere.png" alt="Villa “La Balisiere” - Port Louis">
-				<figcaption>Villa “La Balisiere” - Port Louis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/structures-thermopolis.png" alt="Structures Thermopolis">
-				<figcaption>Structures Thermopolis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-x.png" alt="Appartement Paris X">
-				<figcaption>Appartement Paris X</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/le-coteau-cassis.png" alt="Pavillon “Le coteau” - Cassis">
-				<figcaption>Pavillon “Le coteau” - Cassis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/villa-ferneze.png" alt="Villa Ferneze - Isola d’Elba">
-				<figcaption>Villa Ferneze - Isola d’Elba</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-xviii.png" alt="Appartement Paris XVIII">
-				<figcaption>Appartement Paris XVIII</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/bar-lullaby-paris.png" alt="Bar “Lullaby” - Paris">
-				<figcaption>Bar “Lullaby” - Paris</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/hotel-first-arte-new-delhi.png" alt="Hotel First Arte - New Delhi">
-				<figcaption>Hotel First Arte - New Delhi</figcaption>
-			</figure>
+		<div class="projects-header">
+			<h2>Mes Projets</h2>
+			<div id="edit-link" class="hidden">
+				<i class="fa-regular fa-pen-to-square"></i>
+				<span>modifier</span>
+			</div>
+		</div>		
+		<div class="filters" id="filtered-content"></div>
+		<div class="gallery">			
+		</div>
+		<div id="edit-modal" class="modal">			
+			<div class="modal-content">				
+					<span id="close-button">&times;</span>
+					<span id="back-button"><i class="fa-solid fa-arrow-left"></i></span>
+					<!--<span id="trash-button"><i class="fa-solid fa-trash-can"></i></span>-->						
+				<div class="modal-title">				 				
+					<h2>Galerie photo</h2>					
+				</div>
+				<div class="modal-gallery">					
+					<!-- Contenu de la galerie -->
+					<!-- Les images -->
+				</div>
+				<div class="additional-content hidden">					
+					<div class="upload-section" id="upload-section">
+						<div id="image-preview" class="image-preview">
+							<!-- Aperçu de l'image -->
+						</div>
+						<div class="upload-section-content">							
+						<i class="fa-regular fa-image"></i>						
+						<label for="file-upload" class="custom-file-upload">											
+							+ Ajouter photo
+						</label>									
+						<input type="file" id="file-upload" accept=".jpg, .png">
+						<p class="instruction">jpg, png : 4mo max</p>
+						</div>						
+					</div>
+					<div class="input-section">
+						<label for="image-title">Titre</label>
+						<input type="text" id="image-title">
+						<label for="image-category">Catégorie</label>
+						<select id="image-category">
+							<!-- Options de catégories -->
+						</select>
+					</div>
+					<hr> <!-- Trait séparateur -->
+					<div class="submit-section">
+						<button id="submit-image-button" disabled>Valider</button>
+					</div>
+				</div>
+				<hr id="modalSeparator">				
+				<div class="modal-button">
+				<button id="add-image-button">Ajouter une photo</button>
+				</div>				
+			</div>
 		</div>
 	</section>
 	<section id="contact">
@@ -105,5 +120,8 @@
 		</ul>
 	</nav>
 </footer>
+<script src="scripts/login.js" defer></script>
+<script src="scripts/main.js" defer></script>
+<script src="scripts/modal.js" defer></script>
 </body>
 </html>
