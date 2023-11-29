@@ -1,8 +1,9 @@
-# Portfolio-architecte-sophie-bluel
+# Projet 6 Eddy Capirchio 
 
-Code du projet 6 d'intégrateur web.
+Code du projet 6 d'intégrateur web,
+Portfolio-architecte-sophie-bluel
 
 ## Information pour le lancer le code
 
- - Lancer le backend depuis votre terminal en suivant les instruction du fichier ReadMe.
- - Si vous désirez afficher le code du backend et du frontend, faites le dans 2 instances de VSCode différentes pour éviter tout problème
+ - Page index HTML version dynamique.
+ - Page login HTML pour la partie login.
