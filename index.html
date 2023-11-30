@@ -55,8 +55,7 @@
 		<div id="edit-modal" class="modal">			
 			<div class="modal-content">				
 					<span id="close-button">&times;</span>
-					<span id="back-button"><i class="fa-solid fa-arrow-left"></i></span>
-					<!--<span id="trash-button"><i class="fa-solid fa-trash-can"></i></span>-->						
+					<span id="back-button"><i class="fa-solid fa-arrow-left"></i></span>									
 				<div class="modal-title">				 				
 					<h2>Galerie photo</h2>					
 				</div>
@@ -74,15 +73,15 @@
 						<label for="file-upload" class="custom-file-upload">											
 							+ Ajouter photo
 						</label>									
-						<input type="file" id="file-upload" accept=".jpg, .png">
+						<input type="file" id="file-upload" accept=".jpg, .png" required>
 						<p class="instruction">jpg, png : 4mo max</p>
 						</div>						
 					</div>
 					<div class="input-section">
 						<label for="image-title">Titre</label>
-						<input type="text" id="image-title">
+						<input type="text" id="image-title" name="titre" required>
 						<label for="image-category">Catégorie</label>
-						<select id="image-category">
+						<select id="image-category" name="catégorie" required>
 							<!-- Options de catégories -->
 						</select>
 					</div>

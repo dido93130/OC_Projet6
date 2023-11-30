@@ -181,9 +181,11 @@ li:hover {
 	margin-top: 80px;
 	width: 100%;	
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-column-gap: 20px;
-	grid-row-gap: 20px;	
+	/*grid-template-columns: 1fr 1fr 1fr;*/
+	grid-template-columns: repeat(3, 1fr);
+	/*grid-column-gap: 20px;
+	grid-row-gap: 20px;	*/
+	gap: 20px;
 }
 
 .gallery img {
@@ -198,7 +200,6 @@ li:hover {
 
 #contact > * {
 	text-align: center;
-
 }
 
 #contact h2{
@@ -252,10 +253,10 @@ input[type="submit"]{
     left: 0;
     width: 100%;
     background-color: black;
-    color: lightgray;
+    color: white;
     text-align: center;
     padding: 20px 0;	
-    z-index: 999;
+    z-index: 1;
 }
 
  #header.space{
@@ -265,8 +266,7 @@ input[type="submit"]{
 /* Style pour le contenu du bandeau */
 .banner-content {
 	font-size: 1.2em;
-    display: flex;
-	
+    display: flex;	
     align-items: center;
     justify-content: center;
 	cursor: pointer;
@@ -296,7 +296,6 @@ input[type="submit"]{
 
 #login-container > * {
 	text-align: center;
-
 }
 
 #login-container h2{
@@ -350,13 +349,11 @@ input[type="submit"]{
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
-    overflow: auto;
+    height: 100%;    
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal-content {   
-    overflow-y: auto; /* Activer le défilement vertical si nécessaire */
+.modal-content {    
     max-height: 90vh; /* Limiter la hauteur pour permettre le défilement */
     padding: 0 100px; /* Ajouter un espacement intérieur pour éviter le débordement */
     background-color: #fefefe;    
@@ -371,15 +368,14 @@ input[type="submit"]{
 	display: grid;		
 	grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
 	gap: 8px;		
-	padding: 20px;
-	
+	padding: 20px;	
 }
 
 .modal-gallery img {
     width: 100%;
     height: auto;
     object-fit: cover;
-    max-height: 98px; /* Changer la hauteur maximale des images */	
+    max-height: 85px; /* Changer la hauteur maximale des images */	
     margin-bottom: 5px;
 }
 
@@ -563,7 +559,7 @@ footer {
 	left: 0;
 	right: 0;	
 	width: 100%;	
-	z-index: 998;	
+	z-index: 0;	
 	background-color: white;
 }
 

@@ -1,5 +1,4 @@
 //Fontion et évenement pour mettre è jour le jeton
-
 const getTokenFromSessionStorage = () => {
     return sessionStorage.getItem('authToken');    
 };
@@ -45,9 +44,7 @@ const openModalWithGalleryItems = async () => {
     const modal = document.getElementById('edit-modal');
     const modalContent = modal.querySelector('.modal-gallery');
     // Effacer le contenu actuel de la modal
-    modalContent.innerHTML = ''; 
-    console.log(getTokenFromSessionStorage());
- 
+    modalContent.innerHTML = '';  
 
     try {       
        const authToken = getTokenFromSessionStorage();
@@ -121,19 +118,19 @@ const closeModal = (event) => {
     }     
 };
 
-// Événement pour ouvrir la modale avec les éléments de la galerie
+// Gestionnaire d'événement pour ouvrir la modale avec les éléments de la galerie
 const editLink = document.getElementById('edit-link');
 if (editLink) {
     editLink.addEventListener('click', openModalWithGalleryItems);    
 }
 
-// Événement pour fermer la modale lorsqu'on clique à l'extérieur
+// Gestionnaire d'événement pour fermer la modale lorsqu'on clique à l'extérieur
 const modal = document.getElementById('edit-modal');
 if (modal) {
     modal.addEventListener('click', closeModal);    
 }
 
-// Gestionnaire d'événement pour le bouton "Ajouter une image"
+// Gestionnaire d'événements pour le bouton "Ajouter une image"
 const addImageButton = document.getElementById('add-image-button');
 const backButton = document.getElementById('back-button');
 const additionalContent = document.querySelector('.additional-content');
@@ -165,6 +162,7 @@ addImageButton.addEventListener('click', () => {
      backButton.style.display = 'block';
 });
 
+// Gestionnaire d'événement pour l'aperçu d'image
 const fileInput = document.getElementById('file-upload');
 const imagePreview = document.getElementById('image-preview');
 const uploadSectionContent = document.querySelector('.upload-section-content');
@@ -185,6 +183,7 @@ fileInput.addEventListener('change',  function () {
     }
 });
 
+//Fonction pour gérer l'état du bouton d'envoi
 const titleInput = document.getElementById('image-title');
 const categoryInput = document.getElementById('image-category');
 const submitButton = document.getElementById('submit-image-button');
@@ -199,7 +198,7 @@ function toggleSubmitButtonState() {
     const isCategorySelected = categoryInput.value !== '';
     const isImageLoaded = imageUpload.files.length > 0;    
 
-    if (isTitleFilled && isCategorySelected && isImageLoaded) {
+    if (isImageLoaded || isCategorySelected || isTitleFilled) {
         submitButton.disabled = false;
         submitButton.classList.add('active');
     } else {
@@ -208,6 +207,7 @@ function toggleSubmitButtonState() {
     }        
 }
 
+// Gestionnaire d'événement pour bouton d'envoi pour l'ajout d'image
 submitButton.addEventListener('click', async () => {
     const titleInput = document.getElementById('image-title').value;    
     const categoryInput = document.getElementById('image-category').value;
@@ -235,7 +235,9 @@ submitButton.addEventListener('click', async () => {
              resetFormFields();     
            
         } else {
+            alert("Erreur le formulaire n’est pas correctement rempli");
             throw new Error('Erreur lors de la soumission des données');
+           
         }
     } catch (error) {
         console.error('Erreur:', error);
@@ -243,6 +245,7 @@ submitButton.addEventListener('click', async () => {
     }
 });
 
+// Gestionnaire d'événement pour le bouton de suppression
 modalGallery.addEventListener('click', async (event) => {
     const deleteButton = event.target.closest('.trash-button');
     if (deleteButton) {

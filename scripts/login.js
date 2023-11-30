@@ -84,7 +84,7 @@ const handleLoginSubmit = async () => {
         } else {
             const errorText = await response.text(); // Récupérer le texte de l'erreur
             console.error('Erreur lors de la connexion:', errorText);
-            alert('Échec de la connexion. Veuillez vérifier vos informations d\'identification.');
+            alert('“Erreur dans l\'identifiant ou le mot de passe');
         }
     } catch (error) {
         console.error('Erreur lors de la tentative de connexion:', error);
