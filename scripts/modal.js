@@ -174,6 +174,23 @@ fileInput.addEventListener('change',  function () {
         reader.onload = function (e) {           
             const img = new Image();
             img.src = e.target.result;
+
+           // Vérifie l'extension du fichier
+           const extension = file.name.split('.')[1];
+           if (extension !== 'png' && extension !== 'jpg') {
+               // Affiche une erreur
+               alert('Le fichier doit être au format PNG ou JPG.');
+               return;
+           }
+
+           // Vérifie la taille du fichier
+           if (file.size > 4194304) {
+               // Affiche une erreur
+               alert('La taille du fichier ne doit pas dépasser 4 Mo.');
+               return;
+           }
+           
+           // Affiche l'aperçu de l'image
             imagePreview.innerHTML = ''; // Efface tout contenu précédent de l'aperçu
             imagePreview.appendChild(img);
             imagePreview.style.display = 'block'; // Afficher l'aperçu de l'image
@@ -198,20 +215,20 @@ function toggleSubmitButtonState() {
     const isCategorySelected = categoryInput.value !== '';
     const isImageLoaded = imageUpload.files.length > 0;    
 
-    if (isImageLoaded || isCategorySelected || isTitleFilled) {
+    if (isImageLoaded && isCategorySelected && isTitleFilled) {
         submitButton.disabled = false;
         submitButton.classList.add('active');
-    } else {
+    } else {        
         submitButton.disabled = true;
         submitButton.classList.remove('active');
-    }        
+    }     
 }
 
 // Gestionnaire d'événement pour bouton d'envoi pour l'ajout d'image
 submitButton.addEventListener('click', async () => {
     const titleInput = document.getElementById('image-title').value;    
     const categoryInput = document.getElementById('image-category').value;
-    const fileInput = document.getElementById('file-upload').files[0];    
+    const fileInput = document.getElementById('file-upload').files[0];   
     
     const formData = new FormData();
     formData.append('title', titleInput);
@@ -234,8 +251,7 @@ submitButton.addEventListener('click', async () => {
              updateGalleryAndModal(); 
              resetFormFields();     
            
-        } else {
-            alert("Erreur le formulaire n’est pas correctement rempli");
+        } else {            
             throw new Error('Erreur lors de la soumission des données');
            
         }
