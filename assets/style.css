@@ -353,7 +353,7 @@ input[type="submit"]{
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal-content {    
+.modal-content { 	 
     max-height: 90vh; /* Limiter la hauteur pour permettre le défilement */
     padding: 0 100px; /* Ajouter un espacement intérieur pour éviter le débordement */
     background-color: #fefefe;    
@@ -368,7 +368,7 @@ input[type="submit"]{
 	display: grid;		
 	grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
 	gap: 8px;		
-	padding: 20px;	
+	padding: 2%;	
 }
 
 .modal-gallery img {
@@ -387,7 +387,8 @@ input[type="submit"]{
 
 .modal-title {	
 	margin-bottom: 30px;
-    text-align: center;   
+    display: flex;
+	justify-content: center;   
     white-space: nowrap;	
 }
 
@@ -400,15 +401,17 @@ input[type="submit"]{
 }
 
 .upload-section {
-	position: relative;	
-    width: 400px;
-	height: 200px; 
+	position: relative;
+	width: 100%;	
+    max-width: 100%;
+	height: 100%;
 	text-align: center;
 	background-color: aliceblue;
 	margin-bottom: 20px;	
 }
 
 .upload-section i {
+	position: relative;
 	display: block;	
 	color: #cdcdd0;
 	font-size: 5em;
@@ -418,7 +421,7 @@ input[type="submit"]{
 
 .image-preview {
     width: 100%;
-	height: 200px; /* Ajustez la hauteur de la zone de prévisualisation selon vos besoins */
+	height: 100%;	
     overflow: hidden;
     display: none; /* Par défaut, l'aperçu de l'image est caché */
 }
@@ -445,11 +448,10 @@ input[type="file"] {
 .custom-file-upload {
 	display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: center;    
 	color: steelblue;
-    padding: 10px;
-	margin: 5px 120px;
+    padding: 2%;
+	margin: 2% 30%;
     cursor: pointer;
 	border: 1px solid #ccc;
     border-radius: 60px;
@@ -462,7 +464,7 @@ label {
 
 input[type="text"],
 select {
-	font-size: 1em;;
+	font-size: 1em;;	
     width: calc(100% - 20px); /* Prend tout l'espace disponible, moins la marge */
     padding: 10px; /* Espacement intérieur */
 	margin-top: 5px;
@@ -502,8 +504,8 @@ select {
 .trash-button {
 	font-size: 10px;
     position: relative;
-	bottom: 85px;
-	left: 45px;
+	bottom: 82%;
+	left: 68%;
     cursor: pointer;
     background-color: black;
 	color: white;    
@@ -521,24 +523,26 @@ select {
 
 #add-image-button {	
 	font-family: 'Syne';
-	padding: 10px 60px;
+	padding: 2% 10%;
 	color: white;
 	background-color: #1D6154;
-	border-radius: 60px;	
-	text-align: center;   
+	border-radius: 60px; 
     white-space: nowrap;
 	margin: 34px;
 }
 
 #submit-image-button {
+	position: relative;
+	text-align: center;
 	font-family: 'Syne';
-	padding: 10px 80px;
+	padding: 2% 10%;
 	color: white;
 	background-color: #cdcdd0;
 	border: none;
 	border-radius: 60px;	
 	margin-top: 20px;
 	margin-bottom: 0;
+	
 }
 
 /*Classes multi-usages*/
